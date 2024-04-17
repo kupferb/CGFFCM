@@ -99,8 +99,8 @@ z_history=[];
 
 %--------------------------------------------------------------------------
 
-fprintf('\nStart of CGFFCM iterations\n');
-fprintf('----------------------------------\n\n');
+% fprintf('\nStart of CGFFCM iterations\n');
+% fprintf('----------------------------------\n\n');
 
 %The CGFFCM iterative procedure.
 nn=1;
@@ -190,18 +190,18 @@ while 1
     end
     
     if ~isnan(E_w)
-        fprintf('p=%g\n',p);
-        fprintf('The CGFFCM objective is E_w=%f\n\n',E_w);
+%         fprintf('p=%g\n',p);
+%         fprintf('The CGFFCM objective is E_w=%f\n\n',E_w);
     end
     
     %Check for convergence. Never converge if in the current (or previous)
     %iteration empty or singleton clusters were detected.
     if ~isnan(E_w) && ~isnan(E_w_old) && (abs(1-E_w/E_w_old)<1e-6 || Iter>=t_max)
         
-        fprintf('\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n');
-        fprintf('Converging for p=%g after %d iterations.\n',p,Iter);
-        fprintf('The final CGFFCM objective is E_w=%f.\n',E_w);
-        fprintf('\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n');
+%         fprintf('\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n');
+%         fprintf('Converging for p=%g after %d iterations.\n',p,Iter);
+%         fprintf('The final CGFFCM objective is E_w=%f.\n',E_w);
+%         fprintf('\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n');
         
         break;
         
@@ -231,7 +231,7 @@ while 1
         if p>=p_max
             p=p_max;
             p_flag=0;
-            fprintf('p_max reached\n\n');
+%             fprintf('p_max reached\n\n');
         end
     end
     
